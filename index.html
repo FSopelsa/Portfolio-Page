@@ -15,15 +15,20 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button id="dark-mode-toggle">🌙 Dark Mode</button></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero/About Section -->
     <section id="about">
-        <h1>Your Name</h1>
+        <h1>Felix S. N.</h1>
         <p>
-            I am a web developer passionate about creating clean and user-friendly websites.
+            I am a web developer currently studying a <em><a href="https://www.lexicon.se/globalassets/arbetsmarknad/nya-produktblad-2023/programmerare-och-systemutvecklare-af--lexicon-vaxjo.pdf" target="_blank" rel="noopener noreferrer"> 
+                'Continuing Education in Full-Stack Software Development (Java & AI)'</a></em> via <a href="https://www.lexicon.se" target="_blank" rel="noopener noreferrer"> 
+                    Lexicon</a>.<br> 
+            This includes learning about software architecture and development methodologies,<br>
+            as well as deepening my knowledge of languages and frameworks such as Java and Spring.<br>
         </p>
     </section>
 
@@ -35,16 +40,20 @@
             <div class="project-card">
                 <h3>Project 1</h3>
                 <p>Description of project 1.</p>
+                <img src="/img/felix_sopelsa_matte_A1.jpg" alt="sci-fi image" />
             </div>
 
             <div class="project-card">
                 <h3>Project 2</h3>
                 <p>Description of project 2.</p>
+                <img src="/img/06-55192132107_00dc598014_o-copy.jpeg" alt="mandala" />
             </div>
 
             <div class="project-card">
                 <h3>Project 3</h3>
                 <p>Description of project 3.</p>
+                <img src="/img/JWST2.jpg" alt="JWST" />
+            </div>
             </div>
         </div>
     </section>
@@ -77,6 +86,33 @@
     <footer>
         <p>&copy; 2026 Felix S. N. All rights reserved.</p>
     </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        // Load dark mode preference from localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️ Light Mode';
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️ Light Mode';
+        }
+
+        // Toggle dark mode on button click
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.textContent = '☀️ Light Mode';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
 
 </body>
 </html>
