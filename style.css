@@ -124,6 +124,9 @@ body.dark-mode textarea {
     border-radius: 8px;
     margin-top: 15px;
 }
+.project-card img:hover {
+transform: scale(1.01);
+}
 
 /* Contact Form */
 #contact {
@@ -152,6 +155,9 @@ button {
 /* Hover Effects */
 button:hover,
 .navbar a:hover {
+    background-color: #555;
+}
+.hover-btn:hover {
     background-color: #555;
 }
 
