@@ -49,8 +49,7 @@ body.dark-mode textarea {
     border: 1px solid #555;
 }
 #dark-mode-toggle {
-    position: fixed;
-    top: 2;
+    position: sticky;
     z-index: 1;
     background-color: #555;
     color: white;
@@ -134,11 +133,12 @@ transform: scale(1.01);
 /* Contact Form */
 #contact {
     margin: 40px 0;
+    margin-top: 150px;
 }
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     max-width: 500px;
 }
 input,
