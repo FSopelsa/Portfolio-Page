@@ -1,168 +1,385 @@
-/* Reset */
+:root {
+    --primary-color: #1a73e8;
+    --primary-dark: #145ec2;
+    --secondary-color: #34ac38;
+    --surface: #f4f4f4;
+    --surface-alt: #ffffff;
+    --text-color: #111111;
+    --muted-text: #444444;
+    --card-bg: #e8f0fe;
+    --border-color: #cccccc;
+    --dark-bg: #202124;
+    --dark-surface: #2b2c2f;
+    --dark-text: #ffffff;
+    --dark-muted: #cfd2d8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Universal selector */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-/* General Styles */
+/* Overall page styling */
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--surface);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    text-align: center;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #1d1d1d;
+}
+
+ /* Dark theme styles */
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+body.dark-theme a,
+body.dark-theme .nav-links-inline a,
+body.dark-theme .sidebar a,
+body.dark-theme .logo {
+    color: var(--dark-text);
+}
+body.dark-theme .hover-btn,
+body.dark-theme #submitButton {
+    filter: brightness(1.1);
+}
+body.dark-theme .navbar,
+body.dark-theme .sidebar,
+body.dark-theme .box,
+body.dark-theme .grid-layout,
+body.dark-theme .gallery .item,
+body.dark-theme .center-box {
+    background-color: var(--dark-surface);
+}
+body.dark-theme table,
+body.dark-theme td,
+body.dark-theme th {
+    border-color: #555;
+}
+body.dark-theme .box {
+    border-color: #555;
+}
+
+/* Type selector */
+h1 {
+    color: var(--primary-color);
+    margin: 0.5em 0;
+}
+h6 {
+    color: var(--secondary-color);
+    margin: 5px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 3px;
+}
+
+/* Class selector */
+.highlight {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* ID selectors */
+#main-header {
     padding: 20px;
+}
+
+.nav-links-inline {
+    display: inline-flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.nav-links-inline a {
+    color: var(--primary-dark);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 999px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #e0e0e0;
-}
-body.dark-mode .navbar {
-    background-color: #0d0d0d;
-}
-body.dark-mode #projects {
-    background-color: #2a2a2a;
-    box-shadow: 0 0px 12px rgba(187, 181, 179, 0.25);
-}
-body.dark-mode .project-card {
-    background-color: #414141;
-    color: #e0e0e0;
-}
-body.dark-mode .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(41, 233, 127, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-body.dark-mode button {
-    background-color: #555;
-}
-body.dark-mode button:hover {
-    background-color: #777;
-}
-body.dark-mode input,
-body.dark-mode textarea {
-    background-color: #333333;
-    color: #e0e0e0;
-    border: 1px solid #555;
-}
-#dark-mode-toggle {
-    background-color: #555;
+.nav-links-inline a:hover {
+    background-color: var(--primary-color);
     color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-#dark-mode-toggle:hover {
-    background-color: #777;
 }
 
-/* Navbar */
+/* Pseudo-class selector for hover effect */
+.hover-btn,
+#submitButton,
+.navbar,
+.sidebar a,
+.nav-links a,
+.item,
+.feature,
+.box,
+.center-box {
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-btn {
+    padding: 12px 24px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hover-btn:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* 'Register' button */
+#submitButton {
+    margin: 16px;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#submitButton:hover {
+    background-color: #2a8a2f;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* Center the table */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: min(90%, 600px);
+}
+
+table th,
+table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+/* Center lists nicely */
+ol,
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Center the form */
+form {
+    display: inline-block;
+    text-align: left;
+    max-width: 320px;
+    width: 100%;
+}
+
+form label,
+form input,
+form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+form input,
+form select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+/* Box model styling */
+.box {
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    margin: 50px auto;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--card-bg);
+}
+
+/* Flexbox centering */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: #e0e0e0;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--surface);
+    height: 200px;
+}
+
+.center-box {
+    padding: 40px;
+    margin: 20px auto;
+    background-color: steelblue;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Navigation Bar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    gap: 16px;
+    padding: 20px;
     background-color: #222;
-    padding: 15px 20px;
 }
-.navbar ul {
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+.dropdown-toggle {
+    background-color: #444;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.dropdown-toggle:hover,
+.dropdown-toggle:focus-visible {
+    background-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+.dropdown-toggle:hover + .sidebar,
+.dropdown-toggle:focus-visible + .sidebar {
     display: flex;
-    list-style: none;
-    gap: 15px;
 }
-.navbar a {
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+}
+.nav-links a {
     color: white;
     text-decoration: none;
-    padding: 8px 12px;
-    transition: background-color 0.3s ease;
 }
 
-/* Hero Section */
-#about {
-    margin: 40px 0;
-    text-align: center;
-}
-
-/* Projects Section */
-#projects {
-    margin: 40px 0;
-    background-color: rgb(194, 190, 190);
-    border-radius: 8px;
-    text-align: center;
-    padding: 5px;
-    box-shadow: 0 2px 18px rgba(53, 50, 49, 0.75);
-}
-.project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    border-radius: 8px;
-}
-.project-card {
-    background-color: #a8a09d;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(10, 1, 4, 0.55);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.project-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-.project-card img:hover {
-transform: scale(1.01);
-}
-
-/* Contact Form */
-#contact {
-    margin: 40px 0;
-}
-form {
-    display: flex;
+/* Sidebar dropdown inside navbar */
+.sidebar {
+    display: none;
+    position: absolute;
+    top: 71%;
+    left: 0;
     flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
+    gap: 2px;
+    min-width: 255px;
+    padding: 14px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
-input,
-textarea,
-button {
-    padding: 10px;
-    font-size: 16px;
-}
-button {
-    background-color: #222;
+
+.sidebar a {
     color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.sidebar:hover,
+.sidebar a:hover {
+    background-color: var(--dark-surface);
+    color: var(--dark-text);
+    display: flex;
 }
 
-/* Hover Effects */
-button:hover,
-.navbar a:hover {
-    background-color: #555;
-}
-.hover-btn:hover {
-    background-color: #555;
+/* Grid layout for gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
+.item {
+    background-color: var(--card-bg);
+    padding: 40px;
     text-align: center;
+    border-radius: 8px;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+/* Grid layout for features */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    grid-column: span 2;
+    background-color: orange;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.box {
+    background-color: lightgray;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+
+/* Media querys for responsiveness */
+@media (max-width: 680px) {
+    .feature {
+        grid-column: span 1;
+    }
+
+    .sidebar,
+    .navbar {
+        width: 100%;
+    }
 }
