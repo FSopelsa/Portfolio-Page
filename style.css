@@ -48,6 +48,12 @@ body.dark-mode textarea {
     color: #e0e0e0;
     border: 1px solid #555;
 }
+body.dark-mode #click-images {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* Dark Mode Toggle Button */
 #dark-mode-toggle {
     position: sticky;
     z-index: 1;
@@ -117,6 +123,10 @@ body.dark-mode textarea {
     box-shadow: 0 8px 12px rgba(10, 1, 4, 0.55);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.project-card a {
+    display: block;
+    cursor: pointer;
+}
 .project-card img {
     width: 100%;
     height: auto;
@@ -127,7 +137,11 @@ body.dark-mode textarea {
     margin-top: 15px;
 }
 .project-card img:hover {
-transform: scale(1.01);
+    transform: scale(1.01);
+}
+#click-images {
+    font-size: 14px;
+    color: #050101;
 }
 
 /* Contact Form */
