@@ -1,0 +1,25 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(0,30,43,255);
+    text-align: center;
+  }
+
+  body button {
+    background-color: rgba(1,237,100,255);
+    border: 2px solid rgba(0,45,47,255);
+    color: rgba(0,45,47,255);
+    text-align: center;
+    font-size: 19px;
+    margin: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 250px;
+  }
+
+  body h1 {
+    color: rgba(1,237,100,255);
+    font-size: 50px;
+  }

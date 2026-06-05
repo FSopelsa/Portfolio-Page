@@ -1,0 +1,32 @@
+  .home-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: 'public/vecteezy_create.jpg';
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #c7e9c8;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: rgb(8, 6, 6);
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }

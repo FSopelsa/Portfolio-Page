@@ -1,0 +1,86 @@
+{
+  "req": {
+    "method": "POST",
+    "url": "http://127.0.0.1:49220/quizzes",
+    "data": [
+      {
+        "questions": [
+          {
+            "id": 981,
+            "question": "How to write an IF statement in JavaScript?",
+            "description": null,
+            "answers": {
+              "answer_a": "if i = 5 then",
+              "answer_b": "if i = 5",
+              "answer_c": "if i == 5 then",
+              "answer_d": "if (i == 5)",
+              "answer_e": null,
+              "answer_f": null
+            },
+            "multiple_correct_answers": "false",
+            "correct_answers": {
+              "answer_a_correct": "false",
+              "answer_b_correct": "false",
+              "answer_c_correct": "false",
+              "answer_d_correct": "true",
+              "answer_e_correct": "false",
+              "answer_f_correct": "false"
+            },
+            "correct_answer": "answer_a",
+            "explanation": null,
+            "tip": null,
+            "tags": [
+              null
+            ],
+            "category": "Code",
+            "difficulty": "Easy"
+          },
+          {
+            "id": 988,
+            "question": "How do you round the number 7.25, to the nearest integer?",
+            "description": null,
+            "answers": {
+              "answer_a": "Math.round(7.25)",
+              "answer_b": "round(7.25)",
+              "answer_c": "rnd(7.25)",
+              "answer_d": "Math.rnd(7.25)",
+              "answer_e": null,
+              "answer_f": null
+            },
+            "multiple_correct_answers": "false",
+            "correct_answers": {
+              "answer_a_correct": "true",
+              "answer_b_correct": "false",
+              "answer_c_correct": "false",
+              "answer_d_correct": "false",
+              "answer_e_correct": "false",
+              "answer_f_correct": "false"
+            },
+            "correct_answer": "answer_a",
+            "explanation": null,
+            "tip": null,
+            "tags": [
+              null
+            ],
+            "category": "Code",
+            "difficulty": "Easy"
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "content-type": "application/json"
+    }
+  },
+  "header": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1392",
+    "etag": "W/\"570-n1iZT5ro5kEXH6XhSb0DZAxXAfY\"",
+    "date": "Fri, 22 Mar 2024 16:37:43 GMT",
+    "connection": "close"
+  },
+  "status": 200,
+  "text": "[{\"questions\":[{\"id\":981,\"question\":\"How to write an IF statement in JavaScript?\",\"description\":null,\"answers\":{\"answer_a\":\"if i = 5 then\",\"answer_b\":\"if i = 5\",\"answer_c\":\"if i == 5 then\",\"answer_d\":\"if (i == 5)\",\"answer_e\":null,\"answer_f\":null,\"_id\":\"65fdb3d7192560b79e8792c7\"},\"multiple_correct_answers\":\"false\",\"correct_answers\":{\"answer_a_correct\":\"false\",\"answer_b_correct\":\"false\",\"answer_c_correct\":\"false\",\"answer_d_correct\":\"true\",\"answer_e_correct\":\"false\",\"answer_f_correct\":\"false\",\"_id\":\"65fdb3d7192560b79e8792c8\"},\"correct_answer\":\"answer_a\",\"explanation\":null,\"tip\":null,\"tags\":[null],\"category\":\"Code\",\"difficulty\":\"Easy\",\"_id\":\"65fdb3d7192560b79e8792c6\"},{\"id\":988,\"question\":\"How do you round the number 7.25, to the nearest integer?\",\"description\":null,\"answers\":{\"answer_a\":\"Math.round(7.25)\",\"answer_b\":\"round(7.25)\",\"answer_c\":\"rnd(7.25)\",\"answer_d\":\"Math.rnd(7.25)\",\"answer_e\":null,\"answer_f\":null,\"_id\":\"65fdb3d7192560b79e8792ca\"},\"multiple_correct_answers\":\"false\",\"correct_answers\":{\"answer_a_correct\":\"true\",\"answer_b_correct\":\"false\",\"answer_c_correct\":\"false\",\"answer_d_correct\":\"false\",\"answer_e_correct\":\"false\",\"answer_f_correct\":\"false\",\"_id\":\"65fdb3d7192560b79e8792cb\"},\"correct_answer\":\"answer_a\",\"explanation\":null,\"tip\":null,\"tags\":[null],\"category\":\"Code\",\"difficulty\":\"Easy\",\"_id\":\"65fdb3d7192560b79e8792c9\"}],\"_id\":\"65fdb3d7192560b79e8792c5\",\"__v\":0}]"
+}
